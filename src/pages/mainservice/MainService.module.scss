@@ -1,0 +1,72 @@
+// @import '../../styles/app.scss';
+
+// .table-bordered th {
+//   background: $blue;
+//   color: $gray-light;
+//   border: none;
+// }
+// //여기 밑에서 부터는 내가 적용하는 style
+
+// th{
+//   text-align: center;
+// }
+
+// td{
+//   text-align: center;
+// }
+
+// .circle{
+//   display: block;
+//   width: 50px;
+//   height: 50px;
+//   border: 1px solid black;
+//   box-sizing: border-box;
+//   border-radius: 25px;
+//   background-color: aquamarine;
+//   border: none;
+//   margin: 0 auto;
+// }
+
+//이거를 자바스크립트로 해가지고 몇초뒤에는 무슨 색 몇초뒤에는 무슨색 이렇게 나와야하는데
+
+/* Add space between the tables */
+.table-container + .table-container {
+  margin-top: 20px;
+}
+
+/* Style the table */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* Style the table header */
+th {
+  // background-color: #f2f2f2;
+  padding: 8px;
+  text-align: left;
+}
+
+/* Style the table data cells */
+td {
+  // border: 1px solid #ccc;
+  // padding: 8px;
+  vertical-align: inherit;
+}
+
+span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgb(85, 85, 85);
+}
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.infoBox {
+  text-align: left;
+  background-color: #f8f9fa;
+  padding: 6px;
+  border-radius: 5px;
+}

@@ -1,0 +1,46 @@
+@import '../../styles/app.scss';
+
+.table-bordered th {
+  background: $blue;
+  color: $gray-light;
+  border: none;
+}
+//여기 밑에서 부터는 내가 적용하는 style
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  padding: 6px 0px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.42857;
+}
+
+
+th{
+  text-align: center;
+}
+
+img{
+  
+}
+
+
+td{
+  text-align: center;
+}
+
+.circle{
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  box-sizing: border-box;
+  border-radius: 25px;
+  background-color: #eee;
+  border: none;
+  margin: 0 auto;
+}
+
+//이거를 자바스크립트로 해가지고 몇초뒤에는 무슨 색 몇초뒤에는 무슨색 이렇게 나와야하는데
