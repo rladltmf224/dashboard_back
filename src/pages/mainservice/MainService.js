@@ -52,7 +52,6 @@ class MainService extends React.Component {
     setTimeout(() => {
       this.setState({ dataLoaded: true });
     }, 2000);
-    console.log(this.props, "11111");
   }
   getBatteryColor(batteryRemaining) {
     if (batteryRemaining >= 0 && batteryRemaining <= 30) {
@@ -109,6 +108,10 @@ class MainService extends React.Component {
     }
   }
   transformData() {
+    console.log(
+      "디스프롭스디스프롭스디스프롭스디스프롭스디스프롭스",
+      this.props
+    );
     const oldData = this.props; //계층구조 밑에 mainService라고.. 직접참조 x
 
     const dataSources = [
@@ -145,7 +148,6 @@ class MainService extends React.Component {
       }
       return transformedData;
     });
-
     return newData;
   }
   droneIsConnectedColor(droneIsConnected) {

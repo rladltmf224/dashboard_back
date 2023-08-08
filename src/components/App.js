@@ -28,6 +28,7 @@ const CloseButton = ({ closeToast }) => (
 
 class App extends React.PureComponent {
   render() {
+    console.log("앱앱앱앱앱앱앱앱앱앱앱앱앱앱앱앱앱앱앱앱앱", this.props);
     if (this.props.loadingInit) {
       return <div />;
     }

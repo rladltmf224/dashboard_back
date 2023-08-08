@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { Switch, Route, withRouter, Redirect } from 'react-router';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import Hammer from 'rc-hammerjs';
+import React from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { Switch, Route, withRouter, Redirect } from "react-router";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+import Hammer from "rc-hammerjs";
 
 // import Profile from '../../pages/profile';
 // import Login from '../../pages/login';
@@ -51,24 +51,28 @@ import Hammer from 'rc-hammerjs';
 // import HighCharts from '../../pages/charts/highcharts';
 // import DashboardAnalytics from '../../pages/analytics';
 // import Dashboard from '../../pages/dashboard';
-import DronePer from '../../pages/droneper/DronePer';
-import DroneAll from'../../pages/droneall/DroneAll';
-import PersonalService from '../../pages/personalservice/PersonalService';
-import MainService from '../../pages/mainservice/MainService';
+import DronePer from "../../pages/droneper/DronePer";
+import DroneAll from "../../pages/droneall/DroneAll";
+import PersonalService from "../../pages/personalservice/PersonalService";
+import MainService from "../../pages/mainservice/MainService";
 
 // import UserFormPage from '../Users/form/UsersFormPage';
 // import UserListPage from '../Users/list/UsersListPage';
 // import UserViewPage from '../Users/view/UsersViewPage';
 // import ChangePasswordFormPage from '../Users/changePassword/ChangePasswordFormPage';
-import { SidebarTypes } from '../../reducers/layout';
-import Header from '../Header';
-import Sidebar from '../Sidebar';
-import Helper from '../Helper';
-import { openSidebar, closeSidebar, toggleSidebar } from '../../actions/navigation';
-import s from './Layout.module.scss';
-import { DashboardThemes } from '../../reducers/layout';
+import { SidebarTypes } from "../../reducers/layout";
+import Header from "../Header";
+import Sidebar from "../Sidebar";
+import Helper from "../Helper";
+import {
+  openSidebar,
+  closeSidebar,
+  toggleSidebar,
+} from "../../actions/navigation";
+import s from "./Layout.module.scss";
+import { DashboardThemes } from "../../reducers/layout";
 // import ProductEdit from '../../pages/management/components/productEdit'; //주석 풀어줘야됨
-import BreadcrumbHistory from '../BreadcrumbHistory';
+import BreadcrumbHistory from "../BreadcrumbHistory";
 
 class Layout extends React.Component {
   static propTypes = {
@@ -81,21 +85,21 @@ class Layout extends React.Component {
   static defaultProps = {
     sidebarStatic: false,
     sidebarOpened: false,
-    dashboardTheme: DashboardThemes.DARK
+    dashboardTheme: DashboardThemes.DARK,
   };
   constructor(props) {
     super(props);
-
+    console.log("콘ㅅ그트럭콘ㅅ그트럭콘ㅅ그트럭콘ㅅ그트럭콘ㅅ그트럭", props);
     this.handleSwipe = this.handleSwipe.bind(this);
   }
 
   componentDidMount() {
     this.handleResize();
-    window.addEventListener('resize', this.handleResize.bind(this));
+    window.addEventListener("resize", this.handleResize.bind(this));
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize.bind(this));
+    window.removeEventListener("resize", this.handleResize.bind(this));
   }
 
   handleResize() {
@@ -105,7 +109,7 @@ class Layout extends React.Component {
   }
 
   handleSwipe(e) {
-    if ('ontouchstart' in window) {
+    if ("ontouchstart" in window) {
       if (e.direction === 4) {
         this.props.dispatch(openSidebar());
         return;
@@ -123,21 +127,29 @@ class Layout extends React.Component {
       <div
         className={[
           s.root,
-          this.props.sidebarStatic ? `${s.sidebarStatic}` : '',
-          !this.props.sidebarOpened ? s.sidebarClose : '',
-          'sing-dashboard',
-          `dashboard-${(localStorage.getItem("sidebarType") === SidebarTypes.TRANSPARENT) ? "light" : localStorage.getItem("dashboardTheme")}`,
-          `header-${localStorage.getItem("navbarColor") ? localStorage.getItem("navbarColor").replace('#', '') : 'FFFFFF'}`
-        ].join(' ')}
+          this.props.sidebarStatic ? `${s.sidebarStatic}` : "",
+          !this.props.sidebarOpened ? s.sidebarClose : "",
+          "sing-dashboard",
+          `dashboard-${
+            localStorage.getItem("sidebarType") === SidebarTypes.TRANSPARENT
+              ? "light"
+              : localStorage.getItem("dashboardTheme")
+          }`,
+          `header-${
+            localStorage.getItem("navbarColor")
+              ? localStorage.getItem("navbarColor").replace("#", "")
+              : "FFFFFF"
+          }`,
+        ].join(" ")}
       >
         <Sidebar />
         <div className={s.wrap}>
           <Header />
           <Helper />
-          
+
           <Hammer onSwipe={this.handleSwipe}>
             <main className={s.content}>
-            <BreadcrumbHistory url={this.props.location.pathname} />
+              <BreadcrumbHistory url={this.props.location.pathname} />
               <TransitionGroup>
                 <CSSTransition
                   key={this.props.location.key}
@@ -148,10 +160,26 @@ class Layout extends React.Component {
                     {/* <Route path="/app/main" exact render={() => <Redirect to="/app/main/analytics" />} /> */}
                     {/* <Route path="/app/main/dashboard" exact component={Dashboard} /> */}
                     {/* <Route path="/app/main/widgets" exact component={Widgets} /> */}
-                    <Route path="/app/main/droneper" exact component={DronePer} />
-                    <Route path="/app/main/droneall" exact component={DroneAll} />
-                    <Route path="/app/main/personalservice" exact component={PersonalService}/>
-                    <Route path="/app/main/mainservice" exact component={MainService}/>
+                    <Route
+                      path="/app/main/droneper"
+                      exact
+                      component={DronePer}
+                    />
+                    <Route
+                      path="/app/main/droneall"
+                      exact
+                      component={DroneAll}
+                    />
+                    <Route
+                      path="/app/main/personalservice"
+                      exact
+                      component={PersonalService}
+                    />
+                    <Route
+                      path="/app/main/mainservice"
+                      exact
+                      component={MainService}
+                    />
                     {/* <Route path="/app/main/analytics" exact component={DashboardAnalytics} /> */}
                     {/* <Route path="/app/edit_profile" exact component={UserFormPage} /> */}
                     {/* <Route path="/app/password" exact component={ChangePasswordFormPage} /> */}
@@ -218,7 +246,14 @@ class Layout extends React.Component {
                 </CSSTransition>
               </TransitionGroup>
               <footer className={s.contentFooter}>
-                Sing App React Admin Dashboard Template - Made by <a href="https://flatlogic.com" rel="nofollow noopener noreferrer" target="_blank">Flatlogic</a>
+                Sing App React Admin Dashboard Template - Made by{" "}
+                <a
+                  href="https://flatlogic.com"
+                  rel="nofollow noopener noreferrer"
+                  target="_blank"
+                >
+                  Flatlogic
+                </a>
               </footer>
             </main>
           </Hammer>

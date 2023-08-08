@@ -23,10 +23,7 @@ export default function mainserviceReducer(state = defaultState, action) {
         mountInfos,
       } = action.payload;
       const loading = action.loading;
-
       console.log("llllllllllllload", action.payload); //state저장
-      console.log("22222222 statestatestatestatestate", state); //state저장
-
       return Object.assign({}, state, {
         safeReturn,
         crimePatrol,
