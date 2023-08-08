@@ -9,28 +9,28 @@ const StationPopover = () => {
         <li>
           <time datetime="10:03"> &nbsp; </time>
           <span>
-            <strong>대기</strong>
+            <strong>도어닫힘</strong>
           </span>
         </li>
 
         <li>
           <time datetime="10:03"> &nbsp; </time>
           <span>
-            <strong>이륙 준비</strong>
+            <strong>도어열림</strong>
           </span>
         </li>
 
         <li>
           <time datetime="10:03"> &nbsp; </time>
           <span>
-            <strong>이륙 완료</strong>
+            <strong>도어열림동작</strong>
           </span>
         </li>
 
         <li>
           <time datetime="10:03"> &nbsp; </time>
           <span>
-            <strong>착륙 준비</strong>
+            <strong>비상정지시행</strong>
           </span>
         </li>
 

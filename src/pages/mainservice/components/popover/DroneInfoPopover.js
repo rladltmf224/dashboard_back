@@ -9,21 +9,35 @@ const DroneInfoPopover = () => {
         <li>
           <time datetime="10:03"> &nbsp; </time>
           <span>
-            <strong>대기</strong>
+            <strong>암</strong>
           </span>
         </li>
 
         <li>
           <time datetime="10:03"> &nbsp; </time>
           <span>
-            <strong>미션 업로드</strong>
+            <strong>디스암</strong>
           </span>
         </li>
 
         <li>
           <time datetime="10:03"> &nbsp; </time>
           <span>
-            <strong>비행중</strong>
+            <strong>이륙</strong>
+          </span>
+        </li>
+
+        <li>
+          <time datetime="10:03"> &nbsp; </time>
+          <span>
+            <strong>미션 스타트</strong>
+          </span>
+        </li>
+
+        <li>
+          <time datetime="10:03"> &nbsp; </time>
+          <span>
+            <strong>가이드</strong>
           </span>
         </li>
 
@@ -33,18 +47,10 @@ const DroneInfoPopover = () => {
             <strong>복귀중</strong>
           </span>
         </li>
-
         <li>
           <time datetime="10:03"> &nbsp; </time>
           <span>
             <strong>착륙</strong>
-          </span>
-        </li>
-
-        <li>
-          <time datetime="10:03"> &nbsp; </time>
-          <span>
-            <strong>임무 종료</strong>
           </span>
         </li>
       </ul>
