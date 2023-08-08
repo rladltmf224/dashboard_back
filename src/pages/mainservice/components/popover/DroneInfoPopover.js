@@ -24,6 +24,7 @@ const DroneInfoPopover = () => {
           <time datetime="10:03"> &nbsp; </time>
           <span>
             <strong>이륙</strong>
+            {/* commit test */}
           </span>
         </li>
 
