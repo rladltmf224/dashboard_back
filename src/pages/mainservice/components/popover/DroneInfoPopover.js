@@ -30,7 +30,7 @@ const DroneInfoPopover = () => {
         <li>
           <time datetime="10:03"> &nbsp; </time>
           <span>
-            <strong>미션스타트</strong>
+            <strong>미션 스타트</strong>
           </span>
         </li>
 
